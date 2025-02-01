@@ -16,7 +16,7 @@ import androidx.lifecycle.LifecycleOwner;
 
 import com.google.android.material.button.MaterialButton;
 
-public class MainActivity extends AppCompatActivity implements View.onClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView resultTv,solutionTv;
     MaterialButton buttonC, buttonOpenBracket, buttonCloseBracket;
@@ -76,5 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.onClickListe
     public void onClick(View view){
         MaterialButton button =(MaterialButton) view;
         String buttonText = (String) button.getText().toString();
+        String dataToCalculate = solutionTv.getText().toString();
+
+        dataToCalculate = dataToCalculate+buttonText;
+        solutionTv.setText(dataToCalculate);
     }
 }
